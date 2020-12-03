@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import "./App.css";
 class App extends Component {
   state = {
     newItem: "",
@@ -57,7 +57,10 @@ class App extends Component {
             onChange={(e) => this.updateInput("newItem", e.target.value)}
           />
           <br />
-          <button onClick={() => this.addItem()}>Add Todo</button>
+          <button
+            className="addButton addButton--active"
+            onClick={() => this.addItem()}
+          ></button>
           <br />
           <ul>
             {this.state.list.map((item) => {

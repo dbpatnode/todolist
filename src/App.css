@@ -1,0 +1,73 @@
+.todo-input {
+  width: 35%;
+  margin-bottom: 10px;
+}
+
+.App {
+  text-align: center;
+}
+
+.todo-container {
+  margin-left: 7%;
+  overflow: auto;
+  border: 1px solid #c4bebe;
+  height: 1%;
+  width: 85%;
+}
+
+.addButton {
+  position: relative;
+  border-width: 2px;
+  border-style: solid;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s all;
+}
+
+.addButton:before {
+  content: "";
+  position: absolute;
+  height: 4px;
+  width: 4px;
+}
+
+.addButton:after {
+  content: "";
+  position: absolute;
+  height: 4px;
+  width: 4px;
+}
+.addButton:before {
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  border-left-width: 2px;
+  border-left-style: solid;
+  left: 9px;
+  top: 5px;
+}
+.addButton:after {
+  border-top-width: 2px;
+  border-top-style: solid;
+  border-right-width: 2px;
+  border-right-style: solid;
+  left: 5px;
+  top: 9px;
+}
+
+.addButton--active {
+  border-color: #0066b7;
+}
+
+.addButton--active:before {
+  border-color: #0066b7;
+}
+
+.addButton--active:after {
+  border-color: #0066b7;
+}
+
+.addButton--active:hover {
+  background: rgba(2, 104, 190, 0.1);
+}
