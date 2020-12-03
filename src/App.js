@@ -31,6 +31,19 @@ class App extends Component {
     });
   };
 
+  deleteItem = (id) => {
+    // make coppy of current item list
+    const list = [...this.state.list];
+
+    // filter out item to be deleted
+    const updatedList = list.filter((item) => item.id !== id);
+
+    // update state with new list
+    this.setState({
+      list: updatedList,
+    });
+  };
+
   render() {
     return (
       <div className="App">
@@ -45,6 +58,17 @@ class App extends Component {
           />
           <br />
           <button onClick={() => this.addItem()}>Add Todo</button>
+          <br />
+          <ul>
+            {this.state.list.map((item) => {
+              return (
+                <li key={item.id}>
+                  {item.value}
+                  <button onClick={() => this.deleteItem(item.id)}>x</button>
+                </li>
+              );
+            })}
+          </ul>
         </div>
       </div>
     );
