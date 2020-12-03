@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./app.css";
 
 class App extends Component {
   state = {
@@ -47,17 +48,21 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div>
-          Add an item:
+        <h1>Whats on your to-do list today?</h1>
+        <div className="todo-container">
           <br />
           <input
+            className="todo-input"
             type="text"
             placeholder="To do..."
             value={this.state.newItem}
             onChange={(e) => this.updateInput("newItem", e.target.value)}
           />
           <br />
-          <button onClick={() => this.addItem()}>Add Todo</button>
+          <button
+            className="addButton addButton--active"
+            onClick={() => this.addItem()}
+          ></button>
           <br />
           <ul>
             {this.state.list.map((item) => {
